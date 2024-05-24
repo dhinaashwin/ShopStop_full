@@ -1,0 +1,209 @@
+import React, { useState } from "react";
+import "./ProductDisplay.css";
+
+const ProductDisplay = (props) => {
+  const { product } = props;
+  const [displayedImage, setDisplayedImage] = useState(product.image);
+  const sizes = ["S", "M", "L", "XL", "XXL"];
+  const datasize = product.sizes;
+
+  // Get the common sizes between sizes and datasize
+  const commonSizes = sizes.filter((size) => datasize.includes(size));
+  const specificationKeys = Object.keys(product.specification);
+  const handleImageHover = (imageUrl) => {
+    setDisplayedImage(imageUrl);
+  };
+
+  // Function to handle carousel slide
+  const handleCarouselSlide = (index) => {
+    const images = [product.image, product.image2, product.image3, product.image4];
+    setDisplayedImage(images[index]);
+  };
+
+  return (
+    <div className="Parent-PD relative flex pb-[100px] gap-20 w-full pt-8">
+      <div className="sticky top-[100px] h-full flex flex-col gap-4 ">
+        {/* Carousel for mobile view */}
+        <div className="carousel">
+          {["image", "image2", "image3", "image4"].map((image, index) => (
+            <img
+              key={index}
+              src={product[image]}
+              className="w-[100px] h-auto"
+              onClick={() => handleCarouselSlide(index)}
+              alt=""
+            />
+          ))}
+        </div>
+      </div>
+      <div className="h-full sticky top-[100px]">
+        <img src={displayedImage} className="w-[650px]" alt="" />
+      </div>
+       <div className="flex flex-col gap-[10px] box-3">
+        <h1 className="md:text-[32px]">
+          {product.title} {}
+        </h1>
+        <h3 className="md:text-[18px] opacity-75">
+          {product.category}'s {product.type}
+        </h3>
+        <div className="flex gap-8">
+          <h1 className="md:text-[26px]">Rs {product.new_price}</h1>
+          <h1 className="md:text-[26px] oldPrice">Rs {product.old_price}</h1>
+        </div>
+        <div className="flex gap-4 mt-3">
+          <button className="btn-product-red">Add to Favorites </button>
+          <button className="btn-product-black">Add to Cart</button>
+        </div>
+        {product.quantity <= 5 && <p>Only {product.quantity} left</p>}
+        <div className="flex gap-6 mt-4">
+          {sizes.map((size, i) => (
+            <button
+              key={i}
+              className={`text-[18px] small-btn ${
+                commonSizes.includes(size)
+                  ? ""
+                  : "opacity-50 cursor-not-allowed"
+              }`}
+              disabled={!commonSizes.includes(size)}
+            >
+              {size}
+            </button>
+          ))}
+
+        </div>
+        <div className="mt-5">
+          <h2>Specification</h2>
+          <div className="flex gap-20 mt-8 opacity-85">
+            <div className="flex flex-col gap-4">
+              <h4 className=" underline">{specificationKeys[0]}</h4>
+            <h4 className="opacity-75">{product.specification.Fit}</h4></div>
+            <div className="flex gap-4 flex-col">
+            <h4 className=" underline">{specificationKeys[1]}</h4>
+            <h4 className="opacity-75">{product.specification.Sleeves}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProductDisplay;
+<div className="div-1 relative flex xsm:items-center xsm:flex-col md:flex-row pb-[100px] lg:gap-10 md:gap-10 pt-8">
+        <div className="sticky top-[100px] h-full flex flex-col xsm:hidden md:flex gap-6 mt-5 md:w-[8%]">
+          {[image, image2, image3, image4].map((img, index) => (
+            <ProductImage
+              key={index}
+              src={img}
+              onMouseEnter={() => handleImageHover(img)}
+            />
+          ))}
+        </div>
+        
+        <div className="md:hidden xsm:relative flex">
+         <Slider {...settings}>
+        {images.map((img, index) => (
+          <div key={index} className="flex justify-center">
+            <Link to='/Modal'>
+            <motion.img 
+              src={img} 
+              className="w-[100px] h-[150px] object-cover " 
+              alt=""
+              onClick={() => handleImageClick(img)}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              initial={{ opacity: 0.6 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+            />
+            </Link>
+          </div>
+        ))}
+      </Slider>
+    </div>
+  <div className="xsm:hidden md:block h-full sticky top-[100px] md:w-[40%] ">
+         <Link to='/Modal'>
+         <img src={displayedImage} className="w-[650px]" onClick={() => handleImageClick(displayedImage)} alt="" />
+         </Link>
+        </div>
+  
+        <div className="flex flex-col gap-[10px] box-3 xsm:mt-10 md:w-[50%]">
+          <h1 className="md:text-[32px] heading xsm:text-[24px] ">{title}</h1>
+          <h3 className="md:text-[18px] xsm:text-[16px] opacity-75">
+            {category}'s {type}
+          </h3>
+          <div className="flex gap-8">
+            <h1 className="md:text-[26px] xsm:text-[22px]">Rs {new_price}</h1>
+            <h1 className="md:text-[26px] xsm:text-[22px] opacity-50 line-through">Rs {old_price}</h1>
+          </div>
+        
+          <div className="flex gap-4 mt-3">
+            <button className="btn-product-red bg-xRed">Add to Favorites </button>
+            <button
+              onClick={handleButtonClick}
+              className="btn-product-black"
+            >
+              Add to Cart
+            </button>
+          </div>
+          {quantity <= 5 && <p>Only {quantity} left</p>}
+          <div className="flex gap-6 mt-4">
+            {sizes.map((size, i) => (
+              <button
+                key={i}
+                className={`text-[18px] small-btn ${
+                  commonSizes.includes(size)
+                    ? ""
+                    : "opacity-50 cursor-not-allowed"
+                } ${selectedSize === size ? "selected" : ""}`}
+                disabled={!commonSizes.includes(size)}
+                onClick={() => setSelectedSize(size)} // Update selected size
+              >
+                {size}
+              </button>
+            ))}
+          </div>
+          <div className="mt-5">
+            <h2>Specification</h2>
+            <div className="flex gap-20 mt-8 opacity-85">
+              <div className="flex flex-col gap-4">
+                <h4 className="underline">{specificationKeys[0]}</h4>
+                <h4 className="opacity-75">{specification.Fit}</h4>
+              </div>
+              <div className="flex gap-4 flex-col">
+                <h4 className="underline">{specificationKeys[1]}</h4>
+                <h4 className="opacity-75">{specification.Sleeves}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="div-2">
+        <h2 className="underline ">Description</h2>
+        <h3 className="mt-3 text-[16px]">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eaque
+          ratione pariatur consectetur dolor, neque provident quo beatae soluta
+          alias perspiciatis natus, iure doloribus deserunt quasi blanditiis
+          dolore! Eos, non.
+        </h3>
+      </div>
+      <h1 className=" text-center mt-10">Related Products</h1>
+      <div className="flex gap-12 mt-4 pb-8 xsm:flex-wrap RelatedProducts">
+        {/* {relatedProducts.map((data, index) => (
+          <Link
+            to={`/product/${data.id}`}
+            key={index}
+            id={data.id}
+            className="flex flex-col"
+          >
+          <RelatedProducts  key={index}
+            id={data.id}
+            title={data.title}
+            old_price={data.old_price}
+            new_price={data.new_price}
+            image={data.image}
+            image2={data.image2} />
+        </Link>
+        ))} */}
+      </div>

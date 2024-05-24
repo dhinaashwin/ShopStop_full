@@ -1,0 +1,57 @@
+/* @media only screen and (min-width:320px) and (max-width:480px){
+    .slick-list{
+        width: 80vw;
+    }
+}
+@media only screen and (min-width:481px) and (max-width:768px){
+    .slick-list{
+        max-width: 480px;
+        width: 90vw;
+    }
+}
+@media only screen and (min-width:769px) and (max-width:1024px){
+    .slick-list{
+        max-width: 769px;
+        width: 100%;
+    }
+}
+@media only screen and (min-width:1025px) and (max-width:1280px){
+    .slick-list{
+        max-width: 1025px;
+        width: 100%;
+    }
+}
+@media only screen and (min-width:1281px){
+    .slick-list{
+        max-width: 1281px;
+        width: 100%;
+    }
+} */
+
+.alice-carousel {
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.5) rgba(255, 255, 255, 0.5);
+  }
+  .alice-carousel::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .alice-carousel::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  
+  .alice-carousel::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+@media only screen and (min-width:320px) and (max-width:480px){
+    .alice-carousel{
+        max-width: 98vw;
+    }
+}
+@media only screen and (min-width:480px){
+    .alice-carousel{
+        max-width: 85vw;
+    }
+}

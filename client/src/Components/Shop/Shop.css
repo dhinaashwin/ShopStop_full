@@ -1,0 +1,96 @@
+
+/* Mobile */
+@media only screen and (min-width:320px) and (max-width:480px){
+    .Section-shop{
+       
+        .Parent-shop{
+            h1{
+                font-size: 28px;
+                text-align: center;
+            }
+            img{
+                width: 280px;
+                height: auto;
+            }
+           flex-direction: column;
+           gap: 20px;
+           .shop-right{
+            align-items: center;
+            gap:15px;
+            .btn{
+                font-size: 20px;
+            }
+           }
+        }
+    }
+}
+@media only screen and (min-width:480px) and (max-width:768px){
+    .Section-shop{
+       
+        .Parent-shop{
+            h1{
+                font-size: 32px;
+            }
+           flex-direction: column;
+           gap: 20px;
+           .shop-right{
+            align-items: center;
+            gap:15px;
+            .btn{
+                font-size: 24px;
+            }
+           }
+        }
+    }
+}
+/* Tablet */
+/* @media only screen and (min-width:480px) and (max-width:768px){
+    .Section-shop{
+        .Parent-shop{
+            gap: 80px;
+        }}
+} */
+/* Small Screen */
+@media only screen and (min-width:768px) and (max-width:1024px){
+    .Section-shop{
+        .Parent-shop 
+        { 
+          
+           gap: 80px;
+           .shop-right{
+            align-items:start;
+            gap:15px;
+        }
+    }
+}
+}
+/* Medium Screen */
+@media only screen and (min-width:1024px) and (max-width:1280px){
+    .Section-shop{
+        .Parent-shop
+        { 
+            h1{
+                text-align: center;
+            }
+           gap: 100px;
+        }}
+
+}
+/* Large Screen */
+@media only screen and (min-width:1280px){
+    .Section-shop{
+        h1{
+            font-size:32px;
+        }
+        .Parent-shop
+        { 
+        justify-content: space-between;
+        .side-left{
+            padding-right: 8rem;
+        }
+        .side-right{
+            padding-left: 8rem;
+        }
+        }
+        }}
+

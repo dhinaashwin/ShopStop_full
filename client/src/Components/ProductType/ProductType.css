@@ -1,0 +1,27 @@
+.radio-button {
+   background-color: transparent;
+   border: 1px solid #cccccc;
+   border-radius: 50px;
+   color: #333333;
+   cursor: pointer;
+   margin-right: 10px; /* Adjust margin as needed */
+   padding: 8px 28px;
+ }
+ 
+ .radio-button.selected {
+   background-color: #000000;
+   border-color: #ffffff;
+   color: #ffffff;
+ }
+   
+@media only screen and (min-width:320px) and (max-width:480px){
+  .alice-carousel{
+      max-width: 98vw;
+  }
+}
+@media only screen and (min-width:480px){
+  .alice-carousel{
+      max-width: 85vw;
+  }
+}
+ 

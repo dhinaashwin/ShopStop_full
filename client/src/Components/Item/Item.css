@@ -1,0 +1,52 @@
+.Parent-item{
+  .title{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #333; /* Set default color */
+  max-width: 100%; /* Ensure the element can wrap */
+  transition: all 0.2s ease-in;
+  }
+ 
+  .title:hover {
+    color:tomato;
+    text-decoration: underline;
+    opacity: 0.8;
+    transition: all 0.2s ease-in;
+    transform: scale(1.02);
+    padding-left: 2px;
+    overflow: hidden;
+    filter: drop-shadow(-1px 4px 2px rgb(0 0 0 / 0.4));
+  }
+  .img-parent{
+    overflow: hidden;
+    position: relative;
+    img{
+      object-fit: cover;
+      transition: all 0.8s ease;
+      aspect-ratio: 3/4;
+    }
+    img:hover {
+      transform: scale(1.1);
+      transition: all 0.8s ease;
+    }
+    
+  }
+}
+/* Mobile */
+@media only screen and (min-width:320px) and (max-width:480px){
+}
+/* Mobile */
+@media only screen and (min-width:480px) and (max-width:768px){
+}
+/* Mobile */
+@media only screen and (min-width:768px) and (max-width:1024px){
+ 
+}
+/* Mobile */
+@media only screen and (min-width:1024px) and (max-width:1280px){
+
+}
+/* Mobile */
+@media only screen and (min-width:1280px){
+}

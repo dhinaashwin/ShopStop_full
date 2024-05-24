@@ -1,0 +1,77 @@
+.loader {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999; /* Ensure loader stays on top */
+  /* Add other styling properties for your loader */
+  --c:no-repeat linear-gradient(black 0 0);
+  background: var(--c),var(--c),var(--c),var(--c);
+  background-size: 21px 21px;
+  animation: l5 1.5s infinite cubic-bezier(0.3,1,0,1);
+}
+@keyframes l5 {
+ 0%   {background-position: 0    0,100% 0   ,100% 100%,0 100%}
+ 33%  {background-position: 0    0,100% 0   ,100% 100%,0 100%;width:60px;height: 60px}
+ 66%  {background-position: 100% 0,100% 100%,0    100%,0 0   ;width:60px;height: 60px}
+ 100% {background-position: 100% 0,100% 100%,0    100%,0 0   }
+}
+
+
+.btn-product-black{
+    background-color: black;
+    color:white;
+    padding: 6px 16px;
+    width: fit-content;
+    height: auto;
+    font-size:24px;
+    font-family: 'TC-SemiBold';
+}
+.btn-product-black-2{
+  background-color: black;
+  color:white;
+  padding: 4px 16px;
+  width: fit-content;
+  height: auto;
+  font-size:18px;
+  font-family: 'TC-SemiBold';
+}
+.btn-product-red{
+  background-color: rgb(217, 68, 68);
+  color:white;
+  padding: 4px 16px;
+  width: fit-content;
+  height: auto;
+  font-size:18px;
+  font-family: 'TC-SemiBold';
+}
+
+.btn-product-black-mobile{
+  width: fit-content;
+  height: auto;
+  font-size:20px;
+  font-family: 'TC-SemiBold';
+
+}
+
+
+.box-shadow-filter{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+
+@media only screen and (min-width:320px) and (max-width:480px){
+
+}
+
+.App {
+    display: flex;
+    flex-direction: column; /* Center the content horizontally */
+}
+  /* @media (min-width: 1280px) {
+    .App .container-1{
+      max-width: 1680px; 
+    }
+  } */

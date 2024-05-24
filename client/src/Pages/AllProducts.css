@@ -1,0 +1,24 @@
+@media only screen and (min-width:320px) and (max-width:768px){
+    .Parent-AllProducts{
+        .box-radio{
+            display:none;
+        }
+    }
+}
+@media only screen and (min-width:481px){
+    .Parent-AllProducts{
+        .box-radio-2{
+            display:none;
+        }
+    }
+}
+.Parent-AllProducts{
+    .items{
+        z-index: 0;
+    }
+    .box-radio-2{
+        z-index: 1000;
+          border: 1px solid black ;
+        }
+    
+}
